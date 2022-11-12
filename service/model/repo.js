@@ -1,9 +1,9 @@
-PokemonModel = require('./pokemonModel');
+import PokemonModel from './pokemonModel.js';
 
 //Set up mongoose connection
 import mongoose from 'mongoose';
 
-let mongoDB = "mongodb://172.20.0.1:27017/mydb";
+let mongoDB = "mongodb://localhost:27017/pokecentre";
 
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -13,3 +13,4 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 export async function getPokemon(params) {
     return PokemonModel.find(params)
 }
+

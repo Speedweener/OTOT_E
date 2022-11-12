@@ -1,6 +1,7 @@
-getPokemon = require('./repo.js');
+import { getPokemon }  from "./repo.js"; 
 
 
-export async function getAllPokemon() {
+export async function ormGetPokemon() {
     return await getPokemon({})
 }
+

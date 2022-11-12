@@ -1,6 +1,9 @@
 // contactModel.js
-var mongoose = require('mongoose');
-// Setup schema
+import mongoose from 'mongoose';
+
+var Schema = mongoose.Schema
+
+// Setup schema  
 var pokemonSchema = mongoose.Schema({
     name: {
         type: String,
@@ -20,8 +23,6 @@ var pokemonSchema = mongoose.Schema({
         default: Date.now
     }
 });
-// Export Contact model
-var Pokemon = module.exports = mongoose.model('pokemon', pokemonSchema);
-module.exports.get = function (callback, limit) {
-    Pokemon.find(callback).limit(limit);
-}
+// Export pokemon model
+export default mongoose.model('pokemons', pokemonSchema)
+

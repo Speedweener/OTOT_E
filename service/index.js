@@ -1,11 +1,12 @@
-let express = require('express')
+import express from 'express';
+import cors from 'cors';
+
+import { getAllPokemon } from './Controller.js';
+
+
 
 
 let app = express();
-
-
-const { getAllPokemon } = require('./Controller');
-
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cors())
